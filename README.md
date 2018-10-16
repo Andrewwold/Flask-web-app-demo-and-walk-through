@@ -93,11 +93,89 @@ So if you can see your, Welcome to my flask app, message, success! You have now 
 
 Hit `Control + c` to close your server, and lets move on to the next section!
 
+Now that our program is working, let set up a couple new folders and files, and turn this into a nice little expandable web app.
+
+In your root folder run the following in the terminal,
+
+`mkdir templates`
+
+Next,
+
+`mkdir static`
+
+then lets cd into our templates folder and create an index.html file with,
+
+`touch index.html`
+
+then cd back into our root directory.
 
 
+Lets open our index.html in our text editor and lets set up our basic html starter code.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+With that in place lets put in some basic code so we can see a result when we call our template.
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My app</title>
+</head>
+<body>
+	<h1>Welcome to my flask app</h1>
+</body>
+</html>
+```
+
+Now that we have our index template in place lets go back to our route in our app.py and set it to call our html file using our imported render_template.
+
+```
+#app.py file
+#importing flask and render templates so we can use flask.
+from flask import Flask, render_template
+
+#setting up our app.
+app = Flask(__name__)
+
+# Setting up our first route,
+@app.route('/')
+def index():
+	return render_template('index.html')
+
+# To check our page and run our app to launch our local host.
+if __name__ == '__main__':
+	app.debug = True
+	app.run()
+```
+This will go to our templates file, look for our index file, and render the code in it at that route on our web page. The '/' by the way stands for Homepage or root page, in other words the code that will be visible when some one visits the home page on your app.
 
 
+Now lets start up your app again, (run `python3 app.py`) and see that we are now rendering our full html file.
 
+And just to test it, go to your index.html file and change the code and refresh the web page just to be sure, I changed it to this,
 
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My app</title>
+</head>
+<body>
+	<h1>Welcome to my flask app cool huh!!</h1>
+</body>
+</html>
+```
 
+Cool isnt it? Next we will walk through have to set up a second route and html page for our website.
 

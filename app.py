@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Setting up our first route,
 @app.route('/')
 def index():
-	return "<h1>Welcome to my flask app</h1>"
+	return render_template('index.html')
 
 # To check our page and run our app to launch our local host.
 if __name__ == '__main__':

@@ -20,7 +20,14 @@ First,
 
 - Ok, now back to our enviroment setup. Now that you have pipenv installed, run `pipenv install`
 
+- This will set up your coding enviroment, and create 2 new files for us.  You will see if you run `ls` at your root, that we now have 3 files. app.py which is still empty, and a Pipfile and Pipfile.lock. Which will track the code packages we will need to run this app, and make them avalaible to our coding enviroment that you set up with pipenv.
 
+
+- Lets push our code at this point to git hub. If you have git installed run the following commands, if you do not, or do not want to use git, skip this step.
+
+- Run `git init`, `git add .`, `git commit -m "Initial commit"`.
+
+- That will create a git repo on your local machine, if you want to push it to git hub feel free to do so now.
 
 
 

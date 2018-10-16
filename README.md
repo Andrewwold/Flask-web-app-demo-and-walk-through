@@ -29,6 +29,75 @@ First,
 
 - That will create a git repo on your local machine, if you want to push it to git hub feel free to do so now.
 
+### Now that we have all of that set up, lets start adding in our libraries and start coding!
+
+Lets first get our app.py file to load up as a flask app, lets add the following code to our app.py.
+
+On line one
+```
+from flask import Flask, render_template
+```
+
+So we are going to import Flask, and we are going to import render_template.
+
+With these 2 imports in place lets keep going.
+
+on line three
+```
+app = Flask(__name__)
+```
+This is our First Parameter, 
+
+The idea of the first parameter is to give Flask an idea of what belongs to your application. This name is used to find resources on the filesystem, can be used by extensions to improve debugging information and a lot more.
+
+So it’s important what you provide there. If you are using a single module, __name__ is always the correct value. (This is what we are doing for this app) If you however are using a package, it’s usually recommended to hardcode the name of your package there. (From the flask docs, link for more information: http://flask.pocoo.org/docs/0.12/api/#application-object)
+
+So once we have that in place lets create our first route, and set up our file to run,
+
+Get your app.py to look like this, (I added comments so you can see what is going on)
+
+```
+#importing flask and render templates so we can use flask.
+from flask import Flask, render_template
+
+#setting up our app.
+app = Flask(__name__)
+
+# Setting up our first route,
+@app.route('/')
+def index():
+	return "<h1>Welcome to my flask app</h1>"
+
+# To check our page and run our app to launch our local host.
+if __name__ == '__main__':
+	app.debug = True
+	app.run()
+```
+
+Once you have your code in place lets fire up our server and see what happens!
+
+run the following in your terminal, (This will run your app and spin up a test server, thanks to flask)
+
+`python3 app.py`
+
+This will spin up and you will see something like this in your terminal,
+
+` * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)`
+
+This tells me that my app is running on http://localhost:5000/
+
+If you see a different set of numbers on yours (which is possible), what ever the last number is `http://127.0.0.1:5000/` in this case 5000, that is your local host number. So `http://127.0.0.1:3000/` would be http://localhost:3000/, etc.
+
+
+So if you can see your, Welcome to my flask app, message, success! You have now spun up a basic small flask app! Next we need to add more functinality and be able to use HTML and CSS pages.
+
+Hit `Control + c` to close your server, and lets move on to the next section!
+
+
+
+
+
+
 
 
 

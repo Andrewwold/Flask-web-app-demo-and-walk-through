@@ -31,6 +31,10 @@ First,
 
 ### Now that we have all of that set up, lets start adding in our libraries and start coding!
 
+First run `pipenv install Flask`
+
+This will allow our virtual enviroment to work with flask.
+
 Lets first get our app.py file to load up as a flask app, lets add the following code to our app.py.
 
 On line one
@@ -177,5 +181,5 @@ And just to test it, go to your index.html file and change the code and refresh 
 </html>
 ```
 
-Cool isnt it? Next we will walk through have to set up a second route and html page for our website.
+Cool isnt it? Lets commit out code to git, and next we will walk through have to set up a second route and html page for our website.
 
